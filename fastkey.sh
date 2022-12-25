@@ -24,8 +24,6 @@ fi
 
 clear; 
 
-export SSH_ASKPASS=$PASS
-
 if [[ ! -z "$KEYNAME" ]]; then
     gum spin -s points --title "Generating $KEY key..." sleep 1
     ssh-keygen -q -t $KEY -N "$PASS" -f ~/.ssh/$KEYNAME >/dev/null 2>&1
@@ -37,8 +35,5 @@ else
     ssh-add ~/.ssh/"id_$KEY"
     gum style --border normal --margin "1" --padding "1 2" --border-foreground 150 "A new SSH key 'id_$KEY' has been generated in ~/.ssh folder and added to your ssh-agent. Thank you for using FastKey! :)"
 fi
-
-unset SSH_ASKPASS
-
 
 exit
