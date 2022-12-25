@@ -7,19 +7,19 @@ gum style --border normal --margin "1" --padding "1 2" --border-foreground 212 "
 # Get preferred key type
 KEY=$(gum choose "ed25519" "ed25519-sk" "dsa" "ecdsa" "ecdsa-sk" "rsa")
 
+clear; gum style --border normal --margin "1" --padding "1 2" --border-foreground 212 "Would you like to give your key a custom name? (default: 'id_$KEY')"
+WANTNAME=$(gum choose "No" "Yes")
+
+if [[ $WANTNAME = "Yes" ]]; then
+    KEYNAME=$(gum input --placeholder "Please input the desired name for the key...")
+fi
+
 clear; gum style --border normal --margin "1" --padding "1 2" --border-foreground 212 "You selected a $KEY key. Would you like to add a password?"
 
 WANTPASS=$(gum choose "No" "Yes")
 
 if [[ $WANTPASS = "Yes" ]]; then
     PASS=$(gum input --password --placeholder "Please input the desired password for the key...")
-fi
-
-clear; gum style --border normal --margin "1" --padding "1 2" --border-foreground 212 "Would you like to give your key a custom name? (default: 'id_$KEY')"
-WANTNAME=$(gum choose "No" "Yes")
-
-if [[ $WANTNAME = "Yes" ]]; then
-    KEYNAME=$(gum input --placeholder "Please input the desired name for the key...")
 fi
 
 clear; 
