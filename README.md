@@ -6,7 +6,7 @@ It is designed to be used on UNIX/POSIX systems such as Ubuntu and MacOS.
 ## Quick overview
 
 FastKey is a very simple script which prompts the user to generate a SSH key of preferred type. Optionally you can give the key a password, as well as give it a custom name if you prefer.
-The key is generated in you ~/.ssh folder and automatically added into you ssh-agent.
+The key is generated in you ~/.ssh folder and automatically added into your ssh-agent.
 
 ## How to use FastKey
 
